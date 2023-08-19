@@ -1,0 +1,569 @@
+import discord
+import random
+import requests
+from discord.utils import get
+from twatter import getWorldTrends
+from topstocks import returnBTC
+from topstocks import returnETH
+from topstocks import returnsolana
+from topstocks import topTrending
+from NewsAPI import news1
+from NewsAPI import news2
+from NewsAPI import news3
+from NewsAPI import description1
+from NewsAPI import description2
+from NewsAPI import description3
+from NewsAPI import image1
+from NewsAPI import image2
+from NewsAPI import image3
+from NewsAPI import business1, business2,business3,businessdescription1,businessdescription2,businessdescription3,businessimage1,businessimage2,businessimage3
+import time, datetime
+import datetime
+import schedule
+from discord.ext import commands, tasks
+from itertools import cycle
+import asyncio
+import stockquotes
+from topstocks import returndot
+from discord.ext.commands import Bot
+from discord.ext.commands import has_permissions, MissingPermissions
+import os
+
+
+
+
+
+
+# from topstocks import truetop
+
+
+connect1 = requests.get('https://api.dev.dex.guru/v1/chain/?api-key=NPqGvog5l7p4I4c91FI_KaLRR0yJZS_la5yIu2jb_zg').json()
+token_address = 
+connect = requests.get('https://api.dev.dex.guru/v1/chain/{chain_id}/tokens/{token_address}/market/?api-key=NPqGvog5l7p4I4c91FI_KaLRR0yJZS_la5yIu2jb_zg')
+print(connect)
+
+token = 'PRIVATE'
+
+client = discord.Client()
+
+
+#-----------------------------------------------automatic news --------------------------------------------------
+
+def sleep():
+    t = datetime
+
+
+baskinglounge = 896840805883445299
+
+status = cycle(['Hello, I am SlurryBot'])
+
+@tasks.loop(seconds=1)
+async def change_status():
+    await client.change_presence(activity=discord.Game(next(status)))
+
+
+timer = time.strftime("%H:%M")
+
+# @tasks.loop()
+# async def automaticnews():
+#     if timer == '22:52':
+#         message_channel = client.get_channel(baskinglounge)
+#         await message_channel.send("Armed")
+
+# def autonews():
+#     automaticnews.start()
+
+
+
+# def timedelay():
+#     automaticnews.start()
+
+
+#-----------------------------------------------automatic news --------------------------------------------------
+
+
+# xpev = stockquotes.Stock('xpev')
+# xpev_price = xpev.current_price
+#
+# li = stockquotes.Stock('li')
+# li_price = li.current_price
+#
+# nio = stockquotes.Stock('nio')
+# nio_price = nio.current_price
+#
+# goev = stockquotes.Stock('goev')
+# goev_price = goev.current_price
+#
+# ozon = stockquotes.Stock('ozon')
+# ozon_price = ozon.current_price
+#
+# baba = stockquotes.Stock('baba')
+# baba_price = baba.current_price
+#
+# uwmc  = stockquotes.Stock('uwmc')
+# UWMC_price = uwmc.current_price
+#
+# clov = stockquotes.Stock('clov')
+# clov_price = clov.current_price
+
+
+
+
+
+@client.event
+async def on_ready ():
+    print('logged in as {0.user}'.format(client))
+    change_status.start() #status
+
+    # automaticnews.start()
+
+
+
+@client.event
+async def on_message (message):
+    price = .001327
+
+
+    username = str(message.author).split('#')[0]
+    user_message = str(message.content)
+    channel = str(message.channel.name)
+    print(f'{username} {user_message} ({channel}')
+
+    if message.author == client.user:
+        return
+# 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games'
+    if message.channel.name =='basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls slry':
+            await message.channel.send(f"Hey {username}! Todays price is ${price}")
+            return
+        elif user_message.lower() =='goodnight':
+            await message.channel.send(f'goodnight {username}! See you tomorrow 😘')
+            return
+        elif user_message.lower() == '!random':
+            response = f' this is a random number: {random.randrange(1000000)}'
+            await message.channel.send(response)
+            return
+
+    if message.channel.name =='basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls nudity':
+            await message.channel.send(f"Hey {username}! Visit poop!")
+            return
+    if message.channel.name =='basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls seabee':
+            await message.channel.send(f"Hey {username}! 💗💗💗💗💗 To know Seabee is to love Seabee! 💗💗💗💗💗")
+            return
+
+    if message.channel.name =='basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls tits':
+            await message.channel.send(f"http://www.pornhub.com")
+            return
+    if message.channel.name =='basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls ass':
+            await message.channel.send(f"http://www.grindr.com")
+            return
+
+    if message.channel.name =='basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls what is an NFT?':
+            await message.channel.send(f"https://www.forbes.com/advisor/investing/nft-non-fungible-token/")
+            return
+
+    if message.channel.name =='basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls hemi':
+            await message.channel.send(f"⚠️⚠️⚠️https://bit.ly/3Dr8Ttr ⚠️⚠️⚠️")
+            return
+
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls w00t':
+            await message.channel.send(f"You must always listen to @w00t 's opinions {username}! ")
+            return
+
+    if message.channel.name =='basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls idol':
+            await message.channel.send(f"Hey {username}, always remember to remain resolute and optimistic in the face of danger!")
+            return
+
+    if message.channel.name =='basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls vman':
+            await message.channel.send(f"⚡Zap!⚡")
+            return
+
+    if message.channel.name =='basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'eb':
+            await message.channel.send(f"**𝕊𝕠𝕠𝕟.** \n https://media.giphy.com/media/l04pRBbraN3Q7WENHZ/giphy.gif\n")
+            return
+
+    if message.channel.name =='basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls etb4u':
+            await message.channel.send(f"Hey {username}, rave chicks are hot!")
+            return
+
+    if message.channel.name =='basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls markolyft':
+            await message.channel.send(f"Hey {username}, did you know that mayo on pizza is delicious? 😘👌")
+            return
+
+
+    if message.channel.name =='basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls bishopghost':
+            await message.channel.send(f"Hey {username}, ask this man about the best city in the world!")
+            return
+
+    if message.channel.name =='basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls suprabloke':
+            await message.channel.send(f"Hey {username}, want to know all about slurries? DM this man🤴")
+            return
+
+    if message.channel.name =='basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls scraps':
+            await message.channel.send(f"Hey {username}, DM this man ONLY if youre a thicc latina")
+            return
+
+    if message.channel.name =='basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls tscm':
+            await message.channel.send(f"Hey {username}...DUCK!!🔧🔧🔧")
+            return
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games' or 'voting' or 'poop' or 'miscellaneous' or 'multimedia' or 'admin' :
+        if user_message.lower() == 'slurry':
+            await message.channel.send(f"**♥ s̴̨̡̥͍̖͕̳̫̾̈̈́̓̇͛̃͆͘ò̵̡̊̀̈́́o̸̧͈̣͓̞̮̪̽́͌̓͋͂̔n̴̥̪̯̆͋͋͐̿̕͝. ♥** \n https://media.giphy.com/media/l04pRBbraN3Q7WENHZ/giphy.gif\n")
+            return
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games' or 'voting' or 'poop' or 'miscellaneous' or 'multimedia' or 'admin':
+        if user_message.lower() == 'slry':
+            await message.channel.send(
+                f"**♥ s̴̨̡̥͍̖͕̳̫̾̈̈́̓̇͛̃͆͘ò̵̡̊̀̈́́o̸̧͈̣͓̞̮̪̽́͌̓͋͂̔n̴̥̪̯̆͋͋͐̿̕͝. ♥** \n https://media.giphy.com/media/l04pRBbraN3Q7WENHZ/giphy.gif\n")
+            return
+
+
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games' or 'voting' or 'poop' or 'miscellaneous' or 'multimedia' or 'admin':
+        if user_message.lower() == 'crypto':
+            await message.channel.send(
+                f"**♥ s̴̨̡̥͍̖͕̳̫̾̈̈́̓̇͛̃͆͘ò̵̡̊̀̈́́o̸̧͈̣͓̞̮̪̽́͌̓͋͂̔n̴̥̪̯̆͋͋͐̿̕͝. ♥** \n https://media.giphy.com/media/l04pRBbraN3Q7WENHZ/giphy.gif\n")
+            return
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games' or 'voting' or 'poop' or 'miscellaneous' or 'multimedia' or 'admin':
+        if user_message.lower() == 'ukraine':
+            await message.channel.send(
+                f"**♥ s̴̨̡̥͍̖͕̳̫̾̈̈́̓̇͛̃͆͘ò̵̡̊̀̈́́o̸̧͈̣͓̞̮̪̽́͌̓͋͂̔n̴̥̪̯̆͋͋͐̿̕͝. ♥** \n https://media.giphy.com/media/l04pRBbraN3Q7WENHZ/giphy.gif\n")
+            return
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games' or 'voting' or 'poop' or 'miscellaneous' or 'multimedia' or 'admin':
+        if user_message.lower() == 'pls daily':
+            await message.channel.send(
+                f"**♥ s̴̨̡̥͍̖͕̳̫̾̈̈́̓̇͛̃͆͘ò̵̡̊̀̈́́o̸̧͈̣͓̞̮̪̽́͌̓͋͂̔n̴̥̪̯̆͋͋͐̿̕͝. ♥** \n https://media.giphy.com/media/l04pRBbraN3Q7WENHZ/giphy.gif\n")
+            return
+
+    # if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games' or 'voting' or 'poop' or 'miscellaneous' or 'multimedia' or 'admin':
+    #     if user_message.lower() == 'a':
+    #         await message.channel.send(
+    #             f"**♥ s̴̨̡̥͍̖͕̳̫̾̈̈́̓̇͛̃͆͘ò̵̡̊̀̈́́o̸̧͈̣͓̞̮̪̽́͌̓͋͂̔n̴̥̪̯̆͋͋͐̿̕͝. ♥** \n https://media.giphy.com/media/l04pRBbraN3Q7WENHZ/giphy.gif\n")
+    #         return
+
+
+    if message.channel.name =='basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls christofurr':
+            await message.channel.send(f"Hey {username}, have you ever walked into mordor?")
+            return
+
+
+    if message.channel.name =='basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls comunista':
+            await message.channel.send(f"Hey {username}, do you have a celica for sale?🚗")
+            return
+
+    if message.channel.name =='basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'robotjames':
+            await message.channel.send(f"⚠️CAUTION {username}⚠️ 🚨🚨🚨CYBER BULLY ALERT🚨🚨🚨")
+            return
+    if message.channel.name =='basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls lizardmech':
+            await message.channel.send(
+                f"Hey {username}, are you Chinese?")
+            return
+    if message.channel.name =='basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls hippo':
+            await message.channel.send(
+                f"Hey {username}, want some mushrooms?🍄🍄🍄🍄🍄")
+            return
+
+    if message.channel.name =='basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'wank':
+            await message.channel.send(
+                f"https://youtu.be/ShOQQOy5pf8 ")
+            return
+
+
+
+
+    # if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games' or 'miscellaneous' or 'multimedia' or 'poop' or 'cars-and-bikes':
+    #     if user_message.lower() =='and' :
+    #         await message.channel.send(f'Hello {username}. I am now the property of SlurryDAO. Any unauthorized use of my code is prohibited. Repeated offenses will result in a ticket automatically issued to Discord and your server may be penalized as a result. Kick me to prevent further messages.')
+    #         return
+
+
+
+
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'sc.net bot':
+            await message.channel.send(f'Yea, thats me, what about it {username}?')
+            return
+
+
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls help':
+            await message.channel.send(f'💋Im SC.net bot, the boss bitch around here. Got a complaint {username}? Whip it out and take it up with a moderator. It better be good. (moderators: bishopghost, christofurr)\n\nNeed admin for whatever reason? Contact either VMAN or IdoL.\n\nSlurry Coin related inquiries? Contact EB.\n\nDont know the rules? Go to the welcome channel.\n\n Got it? Good.💕❤️ ')
+            return
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls twatter':
+            await message.channel.send(getWorldTrends())
+            return
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls bitcoin':
+            await message.channel.send("The current BTC price is:")
+            await message.channel.send(returnBTC())
+            return
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls che':
+            await message.channel.send(f"Hello {username} how is it going?")
+            return
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls eth':
+            await message.channel.send(returnETH())
+            return
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls dot':
+            await message.channel.send('The current DOT price is:')
+            await message.channel.send(returndot())
+            return
+    #
+    # channel = client.get_channel(980151399998451764)
+    # await channel.send('All your Base are Belong to Us')
+
+
+
+
+
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls sol':
+            await message.channel.send('The current SOL price is:')
+            await message.channel.send(returnsolana())
+            return
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games' or 'slurrycoin-price':
+        if user_message.lower() == 'sassy':
+            await message.channel.send(f'Ikr {username} 🥰')
+            return
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games' or 'slurrycoin-price':
+        if user_message.lower() == 'pls next':
+            await message.channel.send(f'..!!countdown 5minutes!.. ')
+            return
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games' or 'slurrycoin-price' or 'miscellaneous':
+        if user_message.lower() == 'hemi':
+            await message.channel.send('')
+            return
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls sotw':
+            await message.channel.send(f'Hey {username}! The Slurry of the Week is Comunista!')
+            return
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'sc.net bot':
+            await message.channel.send(f'Yea, thats me. What do you want {username}? I have many commands, but it doesnt mean youll get to see them.')
+            return
+
+    test = "  \n".join(str(x) for x in topTrending())
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls topcoins':
+            await message.channel.send(f'Hey {username}, here are the **top 7** currently trending coins 💋 \n')
+            await message.channel.send(test)
+            return
+
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls ozon':
+            await message.channel.send(f'Hey {username}, the price of ozon is \n')
+            await message.channel.send(ozon_price)
+            return
+
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls lcid':
+            await message.channel.send(f'Hey {username}, heres an up to the second quote on your electric car thingy 💋 \n')
+            await message.channel.send(lucidmotors_price)
+            return
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls xpev':
+            await message.channel.send(
+                f'Hey {username}, the current price of xpev is 💋 \n')
+            await message.channel.send(xpev_price)
+            return
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls li':
+            await message.channel.send(
+                f'Hey {username}, the current price of li is 💋 \n')
+            await message.channel.send(li_price)
+            return
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls nio':
+            await message.channel.send(
+                f'Hey {username}, the current price of nio is 💋 \n')
+            await message.channel.send(nio_price)
+            return
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls goev':
+            await message.channel.send(
+                f'Hey {username}, the current price of nio is 💋 \n')
+            await message.channel.send(goev_price)
+            return
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls baba':
+            await message.channel.send(
+                f'Hey {username}, the current price of baba is 💋 \n')
+            await message.channel.send(baba_price)
+            return
+
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls uwmc':
+            await message.channel.send(
+                f'Hey {username}, the current price of UWMC is 💋 \n')
+            await message.channel.send(UWMC_price)
+            return
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls clov':
+            await message.channel.send(
+                f'Hey {username}, the current price of clov is 💋 \n')
+            await message.channel.send(clov_price)
+            return
+
+
+
+
+
+
+
+    # news = "  \n".join(str(x) for x in newsweird())
+
+    if message.channel.name == 'basking-lounge' or 'community' or 'slurrycoin-price' or 'politics-investing' or 'discord-games':
+        if user_message.lower() == 'pls news':
+            await message.channel.send(f'**Hey {username}, here are your top stories of the day:**')
+            await message.channel.send(str(news1()))
+            await message.channel.send(str(description1()))
+            await message.channel.send(str(image1()))
+            await message.channel.send(str(news2()))
+            await message.channel.send(str(description2()))
+            await message.channel.send(str(image2()))
+            await message.channel.send(str(news3()))
+            await message.channel.send(str(description3()))
+            await message.channel.send(str(image3()))
+            return
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #
+    # if user_message.lower() == 'pls slry info':
+    #     await message.channel.send(f"Hey {username}! Slurry Coin it a community token used by the Supercars.net community!")
+    #     return
+    # if user_message.lower() == 'pls moderator':
+    #     await message.channel.send(f"Hey {username}! Our moderators are christofurr and BishopGhost. DM them for any issues you may be having!")
+    #     return
+    #
+    #
+    # if user_message.lower() == '!anywhere':
+    #     await message.channel.send('this is anywhere')
+    #     return
+
+
+#
+# intents = discord.Intents.default()
+# intents.members = True
+#
+
+
+
+
+# @client.listener
+# async def on_member_join(self, member):
+#     log_channel = self.client.get_channel('test')
+#     embed = discord.Embed(color=0x00FF00)
+#     embed.set_author(name=f"{member} has joined the server.", icon_url=f"{member.avatar_url}")
+#     await log_channel.send(content=None, embed=embed)
+
+intents =discord.Intents.default()
+intents.members = True
+
+initial_extensions = []
+
+for filename in os.listdir(r'C:\Users\16616\PycharmProjects\untitled\cogs'):
+    if filename.endswith('.py'):
+        initial_extensions.append("cogs."+filename[:-3])
+
+# if __name__ == '__main__':
+#     for extension in initial_extensions:
+#         client.load_extension(extension)
+#
+#
+
+
+# @commands.command(pass_context = True)
+# @commands.has_permissions(manage_roles = True)
+# async  def addRole(ctx, user : discord.member, *, role: discord.Role):
+#     if role in user.roles:
+#         await ctx.send(f"{user.mention} you are admin, {role}")
+#     else:
+#         await user.add_roles(role)
+#         await ctx.send(f"added {role} to {user.mention}")
+#
+#
+
+@client.event
+async def on_message(message):
+    if message.content == "oops":
+        member = message.author
+        role = get(member.guild.roles, name="Jr Murderator")
+        await member.add_roles(role)
+
+
+
+
+
+client.run(token)
